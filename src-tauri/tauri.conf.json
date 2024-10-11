@@ -1,65 +1,37 @@
 {
+  "$schema": "https://schema.tauri.app/config/2.0.0-rc",
+  "productName": "hackernewsapp",
+  "version": "0.1.0",
+  "identifier": "com.tauri.dev",
   "build": {
-    "beforeBuildCommand": "cd hackernews && dx build --release",
-    "beforeDevCommand": "cd hackernews && dx serve --port 8080 --hot-reload",
-    "devPath": "http://localhost:8080",
-    "distDir": "../hackernews/dist"
+    "frontendDist": "./",
+    "devUrl": "http://localhost:8080",
+    "beforeDevCommand": "cd ../hackernews && dx serve --port 8080 --hot-reload",
+    "beforeBuildCommand": "cd ../hackernews && dx build --release"
   },
-  "package": {
-    "productName": "hackernewsapp",
-    "version": "0.1.0"
-  },
-  "tauri": {
-    "allowlist": {
-      "all": false
-    },
-    "bundle": {
-      "active": true,
-      "category": "DeveloperTool",
-      "copyright": "",
-      "deb": {
-        "depends": []
-      },
-      "externalBin": [],
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ],
-      "identifier": "com.tauri.dev",
-      "longDescription": "",
-      "macOS": {
-        "entitlements": null,
-        "exceptionDomain": "",
-        "frameworks": [],
-        "providerShortName": null,
-        "signingIdentity": null
-      },
-      "resources": [],
-      "shortDescription": "",
-      "targets": "all",
-      "windows": {
-        "certificateThumbprint": null,
-        "digestAlgorithm": "sha256",
-        "timestampUrl": ""
-      }
-    },
-    "security": {
-      "csp": null
-    },
-    "updater": {
-      "active": false
-    },
+  "app": {
     "windows": [
       {
-        "fullscreen": false,
+        "title": "hackernews",
+        "width": 800,
         "height": 600,
         "resizable": true,
-        "title": "hackernews",
-        "width": 800
+        "fullscreen": false
       }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
     ]
   }
 }
